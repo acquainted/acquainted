@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   end
   resources :messages, only: [:new, :create]
   resources :profiles
+  resources :profiles do
+    collection { post :search, to: 'profiles#index' }
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
