@@ -1,4 +1,4 @@
-<div id="inbox" >
+<div id="inbox" class="container">
   <div class="row">
       <ul class="nav nav-tabs">
         <%= mailbox_section 'inbox', @box %>
@@ -6,15 +6,10 @@
         <%= mailbox_section 'trash', @box %>
       </ul>
 
-      <% if @box == "inbox" %>
-          current_user.mailbox.inbox
-      <% elsif @box == "sent" %>
-          current_user.mailbox.setbox
-      <% elsif @box == 'trash' %>
+      <% if @box == 'trash' %>
         <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete,
                        data: {confirm: 'Are you sure?'} %></p>
 
-        current_user.mailbox.trash
       <% end %>
       <ul class="list-group">
         <%= render partial: 'conversations/conversation', collection: @conversations %>
