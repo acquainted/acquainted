@@ -30,6 +30,7 @@ gem 'will_paginate'
 gem 'mailboxer'
 gem "simple_calendar", "~> 1.1.0"
 gem 'font-awesome-sass'
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
