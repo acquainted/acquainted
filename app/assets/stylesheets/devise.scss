@@ -7,9 +7,11 @@
 
   #tag {
     font-weight:600;
-    font-size:2em;
+    font-size:1.75em;
+    line-height: 1.25em;
     color:$light-main-color;
-    text-align:left;
+    text-align:center;
+    padding-top:40px;
   }
 
   .form {
@@ -32,6 +34,17 @@
     .remember {
       padding-left:10px;
       display:inline-block;
+    }
+    a {
+      color:$accent-color;
+    }
+    a:hover {
+      background:none;
+      color:$light-main-color;
+    }
+    .actions {
+      margin-top:10px;
+      
     }
 
   }
