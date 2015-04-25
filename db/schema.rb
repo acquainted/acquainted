@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425192241) do
+ActiveRecord::Schema.define(version: 20150425221447) do
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 20150425192241) do
     t.integer  "user_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "avatar_s"
+    t.string   "avatar_l"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

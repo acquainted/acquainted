@@ -9,18 +9,6 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/"><img src="<%= asset_path( 'acquainted_logo.png' ) %>" class="logo"></a>
-          <% if user_signed_in? %>
-            <%= search_form_for @search, {class: 'navbar-form navbar-left'} do |f| %>
-              <div class="input-group">
-                <%= f.text_field :position, class: 'form-control clearable', placeholder: 'Get acquainted with...' %>
-                <span class="input-group-btn">
-                  <%= button_tag(type: 'submit', class: 'btn btn-default') do %>
-                    <i class="fa fa-search"></i>
-                  <% end %>
-                </span>
-              </div>
-            <% end %>
-          <% end %>
         </div>
 
           <ul class="nav navbar-nav navbar-right">
@@ -52,7 +40,7 @@
               Hello, <%= current_user.first_name %>!
              <span class="caret"></span>
              <span class="thumb-sm avatar pull-right">
-               <%= image_tag('http://placehold.it/32x32')%>
+               <%= image_tag( current_user.profile.avatar_s, height: 32, class: 'img-circle') %>
              </span>
             </a>
             <ul class="dropdown-menu" role="menu">

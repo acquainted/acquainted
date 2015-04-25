@@ -35,6 +35,14 @@
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id, value: current_user.id %>
   </div>
+  <div class="field">
+    <%= f.label :avatar_s, "Avatar (small)" %><br>
+    <%= f.text_field :avatar_s %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar_l, "Avatar (large)" %><br>
+    <%= f.text_field :avatar_l %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
