@@ -1,3 +1,23 @@
-// Place all the styles related to the Dashboard controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'base';
+
+#basic_info {
+	text-align:center;
+	#name {
+
+	}
+	#position {
+
+	}
+}
+
+#about {
+	#bio, #ask_me, #position_history {
+		padding: 20px 0px;
+	}
+	#bio, #ask_me {
+		border-bottom:1px solid;
+	}
+	.title {
+		font-weight:600;
+	}
+}
