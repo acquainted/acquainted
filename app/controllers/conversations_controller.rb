@@ -1,6 +1,7 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_mailbox
+  before_action :set_search
   before_action :get_conversation, except: [:index, :empty_trash]
   before_action :get_box, only: [:index]
 
@@ -51,6 +52,10 @@ class ConversationsController < ApplicationController
   end
 
   private
+
+  def set_search
+    @search = Profile.search(params[:q])
+  end
 
   def get_mailbox
     @mailbox ||= current_user.mailbox

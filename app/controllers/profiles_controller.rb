@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_search
 
   # GET /profiles
   # GET /profiles.json
@@ -65,6 +66,10 @@ class ProfilesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
       @profile = Profile.find(params[:id])
+    end
+
+    def set_search
+      @search = Profile.search(params[:q])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
