@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
   root 'dashboard#index'
   resources :conversations, only: [:index, :show, :destroy] do
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
     end
   end
   resources :messages, only: [:new, :create]
+  resources :profiles, only: [:show, :edit, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
