@@ -5,6 +5,12 @@
 <table>
   <thead>
     <tr>
+      <th>Position</th>
+      <th>Department</th>
+      <th>About</th>
+      <th>Current projects</th>
+      <th>Karma</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +18,12 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
+        <td><%= profile.position %></td>
+        <td><%= profile.department %></td>
+        <td><%= profile.about %></td>
+        <td><%= profile.current_projects %></td>
+        <td><%= profile.karma %></td>
+        <td><%= profile.user %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
