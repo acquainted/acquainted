@@ -3,9 +3,16 @@
 	background-color: $panel-background;
 }
 
+.navbar-default{
+  background-color:$main-color;
+}
 .navbar-brand {
   padding-top:0;
  img {
 	height:60px;
 	}
+}
+
+a:hover {
+	color:$main-color;
 }
