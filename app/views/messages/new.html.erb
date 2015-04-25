@@ -9,10 +9,5 @@
     <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
   </div>
 
-  <div class="form-group">
-    <%= label_tag 'recipients', 'To' %>
-    <%= text_field_tag 'recipients', nil, class: 'form-control' %>
-  </div>
-
   <%= submit_tag 'Send', class: 'btn btn-primary' %>
 <% end %>

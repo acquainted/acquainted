@@ -6,16 +6,23 @@
         <%= mailbox_section 'trash', @box %>
       </ul>
 
-      <% if @box == 'trash' %>
-        <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete,
-                       data: {confirm: 'Are you sure?'} %></p>
-
-      <% end %>
-      <ul class="list-group">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th class="conv_subject">Subject</th>
+            <th class="conv_participants">Participants</th>
+            <th class="conv_body">Body</th>
+            <th class="conv_actions"></th>
+          </tr>
+        </thead>      
         <%= render partial: 'conversations/conversation', collection: @conversations %>
-      </ul>
+      </table>
 
       <%= will_paginate %>
-    </div>
 
+      <% if @box == 'trash' %>
+        <p class><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'label label-danger empty_trash', method: :delete,
+                       data: {confirm: 'Are you sure?'} %></p>
+      <% end %>
+    </div>
 </div>

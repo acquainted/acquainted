@@ -1,22 +1,30 @@
-<li class="list-group-item clearfix">
-  <%= link_to conversation.subject, conversation_path(conversation) %>
+<tbody>
 
-  <div class="btn-group-vertical pull-right">
-    <% if conversation.is_trashed?(current_user) %>
-      <%= link_to 'Restore', restore_conversation_path(conversation), class: 'btn btn-xs btn-info', method: :post %>
-    <% else %>
-      <%= link_to 'Move to trash', conversation_path(conversation), class: 'btn btn-xs btn-danger', method: :delete,
-                  data: {confirm: 'Are you sure?'} %>
+<tr>
+  <td class="conv_subject">
+    <%= link_to conversation.subject, conversation_path(conversation) %><br />
+    <small><span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span></small>
+  </td>
 
-      <% if conversation.is_unread?(current_user) %>
-        <%= link_to 'Mark as read', mark_as_read_conversation_path(conversation),
-                    class: 'btn btn-xs btn-info', method: :post %>
+  <td class="conv_participants"><p><%= render 'conversations/participants', conversation: conversation %></p>
+  </td>
+  <td class="conv_body">
+    <p><%= conversation.last_message.body %></p>
+    </td>
+  <td class="conv_actions">
+    <div class="btn-group-vertical pull-right">
+      <% if conversation.is_trashed?(current_user) %>
+        <%= link_to 'Restore', restore_conversation_path(conversation), class: 'label label-default', method: :post %>
+      <% else %>
+        <%= link_to 'Move to trash', conversation_path(conversation), class: 'label label-default', method: :delete,
+                    data: {confirm: 'Are you sure?'} %>
+
+        <% if conversation.is_unread?(current_user) %>
+          <%= link_to 'Mark as read', mark_as_read_conversation_path(conversation),
+                      class: 'btn btn-xs btn-info', method: :post %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-
-  <p><%= render 'conversations/participants', conversation: conversation %></p>
-
-  <p><%= conversation.last_message.body %>
-    <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
-</li>
+    </div>
+  </td>
+</tr>
+</tbody>

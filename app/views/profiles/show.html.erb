@@ -4,7 +4,7 @@
       <%= image_tag( @profile.avatar_l, class: "center-block img-responsive img-circle")%>
   	  <h3 class="Name"><%= current_user.first_name %> <%= current_user.last_name %></h3>
       <h4>Joined <%= current_user.created_at.year %> | 43 <%= icon('star')%></h4>
-      <%= link_to 'Send message', new_message_path(to: current_user.id), class: 'btn btn-default btn-sm' %>
+      <%= link_to 'Send message', new_message_path(to: current_user.id), class: 'btn btn-default btn-sm', "data-toggle" => "modal", 'data-target' => '#msgmodal'%>
   	  <h4 class="position"><%= @profile.position %> </h4>
    	  <h4 class="department"><%= @profile.department %></h4>
     </div>
@@ -52,5 +52,24 @@
         <div id="calendar"></div>
       </div>
     </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="msgmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><%= form_tag messages_path, method: :post do %>
+
+  <div class="modal-dialog">
+      <div class="form-group">
+        <%= label_tag 'message[subject]', 'Subject' %>
+        <%= text_field_tag 'message[subject]', nil, class: 'form-control', required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag 'message[body]', 'Message' %>
+        <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
+      </div>
+
+      <%= submit_tag 'Send', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>
