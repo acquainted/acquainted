@@ -143,6 +143,14 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+<<<<<<< HEAD
+=======
+    simple_calendar (1.1.10)
+      rails (>= 3.0)
+    simple_form (3.1.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+>>>>>>> 2ae8bec368a2ea6adfdaf3738965a2f751a640e7
     spring (1.3.4)
     sprockets (3.0.2)
       rack (~> 1.0)
@@ -187,6 +195,11 @@ DEPENDENCIES
   rails (= 4.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+<<<<<<< HEAD
+=======
+  simple_calendar (~> 1.1.0)
+  simple_form
+>>>>>>> 2ae8bec368a2ea6adfdaf3738965a2f751a640e7
   spring
   sqlite3
   turbolinks
