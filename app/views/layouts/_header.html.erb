@@ -32,7 +32,9 @@
               Hello, <%= current_user.first_name %>!
              <span class="caret"></span>
              <span class="thumb-sm avatar pull-right">
-               <%= image_tag( current_user.profile.avatar_s, height: 32, class: 'img-circle') %>
+               <% if current_user.profile %>
+                <%= image_tag( current_user.profile.avatar_s, height: 32, class: 'img-circle') %>
+                <% end %>
              </span>
             </a>
             <ul class="dropdown-menu" role="menu">
