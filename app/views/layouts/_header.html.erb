@@ -9,22 +9,24 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/"><img src="<%= asset_path( 'acquainted_logo.png' ) %>" class="logo"></a>
-          <%= search_form_for @search, {class: 'navbar-form navbar-left'} do |f| %>
-            <div class="input-group">
-              <%= f.text_field :position, class: 'form-control clearable', placeholder: 'Get acquainted with...' %>
-              <span class="input-group-btn">
-                <%= button_tag(type: 'submit', class: 'btn btn-default') do %>
-                  <i class="fa fa-search"></i>
-                <% end %>
-              </span>
-            </div>
+          <% if user_signed_in? %>
+            <%= search_form_for @search, {class: 'navbar-form navbar-left'} do |f| %>
+              <div class="input-group">
+                <%= f.text_field :position, class: 'form-control clearable', placeholder: 'Get acquainted with...' %>
+                <span class="input-group-btn">
+                  <%= button_tag(type: 'submit', class: 'btn btn-default') do %>
+                    <i class="fa fa-search"></i>
+                  <% end %>
+                </span>
+              </div>
+            <% end %>
           <% end %>
         </div>
 
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
             <li>
-              <a href="/conversations">
+              <a href="/profiles">
                 <%= icon('search') %>
               </a>
             </li>
