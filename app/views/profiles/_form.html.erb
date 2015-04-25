@@ -27,13 +27,13 @@
     <%= f.label :current_projects %><br>
     <%= f.text_area :current_projects %>
   </div>
-  <div class="field">
+  <div class="hidden">
     <%= f.label :karma %><br>
     <%= f.text_area :karma %>
   </div>
-  <div class="field">
+  <div class="hidden">
     <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.text_field :user_id, value: current_user.id %>
   </div>
   <div class="actions">
     <%= f.submit %>
