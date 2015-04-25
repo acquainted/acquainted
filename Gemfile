@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
+gem 'mailboxer'
 gem "simple_calendar", "~> 1.1.0"
 
 # Use ActiveModel has_secure_password
