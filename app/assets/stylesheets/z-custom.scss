@@ -134,3 +134,68 @@ body {
 .top-margin {
   margin-top: 10px;
 }
+
+/* MAIN CALENDAR */
+
+#main_calendar table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#main_calender td,
+#main_calender th {
+  font-family: "Lucida Grande",arial,helvetica,sans-serif;
+  font-size: 10px;
+  padding: 6px;
+  border: 1px solid #999;
+}
+
+#main_calender th {
+  background: #DDD;
+  color: #666;
+  text-align: center;
+  width: 14.2857142857143%;
+}
+
+#main_calender td {
+  background: #FFF;
+  color: #777;
+  height: 80px;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+#main_calender .notmonth {
+  color: #CCC;
+}
+
+#main_calender #month {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#main_calender #month a, #main_calender #month a:hover {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #999;
+}
+
+#main_calendar .today {
+  background-color: #D7F2FF;
+}
+
+#main_calendar ul {
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+#main_calendar li {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  text-align: center;
+}
