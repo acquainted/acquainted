@@ -1,23 +1,42 @@
-#splash {
-  padding: 10px;
-  position: absolute;
-  top:20%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  vertical-align: middle;
+@import 'base';
 
-  #logo {
+.splash {
+  height:100%;
+  background-image: image-url("splashbackground.jpg");
+  background-size:cover;
+
+  #tag {
+    font-weight:600;
+    font-size:2em;
+    color:$light-main-color;
+    text-align:left;
+  }
+
+  .form {
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    vertical-align: middle;
     text-align:center;
+
+    .form-control {
+      margin-top:10px;
+    }
+
+    .form-inputs {
+      padding:10px;
+    }
+
+    .remember {
+      padding-left:10px;
+      display:inline-block;
+    }
+
   }
-  .login {
-  	float:left
-  }
-  .remember {
-    float:right;
-  }
-}
 
 .form_meta {
   text-align:center;
+}
 }
