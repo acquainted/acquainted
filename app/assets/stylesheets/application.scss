@@ -15,7 +15,9 @@
  */
 
  @import "bootstrap-sprockets";
+ @import "bootswatch/flatly/variables";
  @import "bootstrap";
+ @import "bootswatch/flatly/bootswatch";
  @import "font-awesome-sprockets";
  @import "font-awesome";
  @import "base";

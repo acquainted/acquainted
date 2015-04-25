@@ -1,62 +1,37 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div>
-    <div class="navbar-header">
-      <i class="fa fa-cog fa-2x pull-right visible-sm visible-xs" class="sidebar-toggle" data-toggle="offcanvas" data-target=".navmenu"></i>
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to image_tag('http://placehold.it/135x35'), root_path, class: 'my-brand' %>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              New
-             <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li><%= link_to 'Example', root_path %></li>
-              <li><%= link_to 'Example', root_path %></li>
-            </ul>
-          </li>
-          <li class="md-hidden"><a href="#">Help</a></li>
-        <% end %>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              <%= icon('bell-o') %>
-              <span class="badge badge-danger up">2</span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li class="panel">Recent Activity</li>
-              <li>Latest Activities go here</li>
-              <li class="divider"></li>
-              <li><%= link_to 'View More', root_path %></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              <%= current_user.email %>
-             <span class="caret"></span>
-
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li><%= link_to 'Profile', edit_user_registration_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to('<i class="fa fa-cog"></i> Log Out'.html_safe, destroy_user_session_path, method: :delete) %></li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to('Log In', new_user_session_path)  %></li>
-          <li><%= link_to('Sign Up', new_user_registration_path)  %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</nav>
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Acquainted</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>
+            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
