@@ -2,9 +2,9 @@
   <div id="left" class="col-md-3">
     <div id="basic_info" class="well">
       <%= image_tag( @profile.avatar_l, class: "center-block img-responsive img-circle")%>
-  	  <h3 class="Name"><%= current_user.first_name %> <%= current_user.last_name %></h3>
-      <h4>Joined <%= current_user.created_at.year %> | 43 <%= icon('star')%></h4>
-      <%= link_to 'Send message', new_message_path(to: current_user.id), class: 'btn btn-default btn-sm', "data-toggle" => "modal", 'data-target' => '#msgmodal'%>
+  	  <h3 class="Name"><%= @profile.user.first_name %> <%= @profile.user.last_name %></h3>
+      <h4>Joined <%= @profile.user.created_at.year %> | 43 <%= icon('star')%></h4>
+      <%= link_to 'Send message', new_message_path(to: @profile.user.id), class: 'btn btn-default btn-sm', "data-toggle" => "modal", 'data-target' => '#msgmodal'%>
   	  <h4 class="position"><%= @profile.position %> </h4>
    	  <h4 class="department"><%= @profile.department %></h4>
     </div>

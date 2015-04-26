@@ -12,6 +12,12 @@ body {
   padding-left: 15%;
 }
 
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: transparent;
+}
+
 /* CALENDAR */
 
 /* DatePicker Container */
@@ -198,4 +204,10 @@ body {
   padding: 0;
   font-size: 11px;
   text-align: center;
+}
+
+/* Profile Cards */
+
+.panel-body ul {
+  list-style: none;
 }
