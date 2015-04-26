@@ -10,47 +10,49 @@
           </button>
           <a class="navbar-brand" href="/"><img src="<%= asset_path( 'acquainted_logo.png' ) %>" class="logo"></a>
         </div>
-
+        <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-            <li>
-              <a href="/profiles">
-                <%= icon('search') %>
-              </a>
-            </li>
-            <li>
-              <a href="/calendars">
-                <%= icon('calendar') %>
-              </a>
-            </li><li>
-              <a href="<%=conversations_path%>">
-               <%= icon('envelope') %>
-              </a>
-            </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              Hello, <%= current_user.first_name %>!
-             <span class="caret"></span>
-             <span class="thumb-sm avatar pull-right">
-               <% if current_user.profile %>
-                <%= image_tag( current_user.profile.avatar_s, height: 32, class: 'img-circle') %>
-                <% end %>
-             </span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <% if current_user.profile %>
-                <li><%= link_to 'My Profile', profile_path(current_user.profile) %></li>
-                <li><%= link_to 'Edit Profile', edit_profile_path(current_user.profile) %></li>
-              <% end %>
-              <li><%= link_to 'Change Password', edit_registration_path(current_user) %></li>
-              <li class="divider"></li>
-              <li><%= link_to('<i class="fa fa-cog"></i> Log Out'.html_safe, destroy_user_session_path, method: :delete) %></li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to('Log In', new_user_session_path)  %></li>
-          <li><%= link_to('Sign Up', new_user_registration_path)  %></li>
-        <% end %></ul>
+              <li>
+                <a href="/profiles">
+                  <%= icon('search') %>
+                </a>
+              </li>
+              <li>
+                <a href="/calendars">
+                  <%= icon('calendar') %>
+                </a>
+              </li>
+              <li>
+                <a href="<%=conversations_path%>">
+                 <%= icon('envelope') %>
+                </a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  Hello, <%= current_user.first_name %>!
+                 <span class="caret"></span>
+                 <span class="thumb-sm avatar pull-right">
+                   <% if current_user.profile %>
+                    <%= image_tag( current_user.profile.avatar_s, height: 32, class: 'img-circle') %>
+                    <% end %>
+                 </span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <% if current_user.profile %>
+                    <li><%= link_to 'My Profile', profile_path(current_user.profile) %></li>
+                    <li><%= link_to 'Edit Profile', edit_profile_path(current_user.profile) %></li>
+                  <% end %>
+                  <li><%= link_to 'Change Password', edit_registration_path(current_user) %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to('<i class="fa fa-cog"></i> Log Out'.html_safe, destroy_user_session_path, method: :delete) %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to('Log In', new_user_session_path)  %></li>
+              <li><%= link_to('Sign Up', new_user_registration_path)  %></li>
+            <% end %>
+          </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>

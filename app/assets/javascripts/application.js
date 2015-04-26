@@ -15,6 +15,10 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require turbolinks
+//= require jquery.turbolinks
 //= require moment
 //= require fullcalendar
+//= require modernizr.custom
+//= require classie
+//= require fullscreenForm
 //= require_tree .
