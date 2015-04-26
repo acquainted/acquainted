@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'fake_profiles/index'
+
   devise_for :users, :controllers => { :registrations => "registrations" }
   root 'profiles#index'
   resources :calendars, only: [:index]
