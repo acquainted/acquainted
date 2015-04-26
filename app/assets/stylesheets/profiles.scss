@@ -68,6 +68,16 @@
 
 .profile_box {
 	text-align:center;
+	.name {
+		font-size:18px;
+		padding:0 0 10px 0;
+	}
+	.meta {
+		padding:10px 0;
+		.position {
+			font-weight:600;
+		}
+	}
 }
 
 .filters {
