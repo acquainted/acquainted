@@ -14,8 +14,9 @@
 
   <br>
 
-
-  <% @profiles.each do |profile| %>
+  <div class="row">
+  <% @profiles.each_with_index do |profile, idx| %>
+    
     <div class="col-md-3">
       <div class="panel panel-default">
         <div class="panel-heading"><%= link_to profile.user.first_name + ' ' + profile.user.last_name, profile_path(profile) %></div>
@@ -30,6 +31,12 @@
         </div>
       </div>
     </div>
+
+    <% if idx % 4 == 3%>
+    </div><!--end row-->
+    <div class="row">
+    <% end %>
+
   <% end %>
 
   <br>
