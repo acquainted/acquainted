@@ -3,10 +3,10 @@
     <div class="well">
       <div id="basic_info">
       <%= image_tag( @profile.avatar_l, class: "center-block img-responsive img-circle")%>
-  	  <h4 class="Name"><%= @profile.user.first_name %> <%= @profile.user.last_name %></h4>
+  	  <h4 class="name"><%= @profile.user.first_name %> <%= @profile.user.last_name %></h4>
       <div class="position"><%= @profile.position %> </div>
       <div class="department"><%= @profile.department %></div>
-      <div class="joined">Joined <%= @profile.user.created_at.year %> | 43 <%= icon('star')%></div>
+      <div class="joined">Joined <%= @profile.user.created_at.year %> |</div><div class="karma"> 43 <%= icon('star')%></div>
       <%= link_to 'Send message', new_message_path(to: @profile.user.id), class: 'btn btn-warning btn-sm sendmsg', "data-toggle" => "modal", 'data-target' => '#msgmodal'%>
       </div>
     </div>
@@ -18,8 +18,8 @@
   </div>
 
   <div class="col-md-6">
-    <div class="about well">
-  	  <div id="bio">
+    <div id="about" class="well">
+  	  <div class="bio">
   		  <h4 class="title">Bio</h4>
   		  <p><%= @profile.about %></p>
   	  </div>
@@ -31,20 +31,32 @@
         <label class="label label-default">Web Services</label>
   	  </div>
 
-  	  <div id="position_history">
+  	  <div class="position_history">
   	    <div class="position">
-  	    <h4 class="current title">Current Position</h4>
-  	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet tortor dolor, quis blandit ligula rhoncus sit amet. Ut tincidunt ante urna, vel commodo tortor feugiat ac.
+          <div class="title">Current Position</div >
+          <div class="date">December 2014 - Present</div>
+          <div class="department">Current Department</div>
+    	     <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet tortor dolor, quis blandit ligula rhoncus sit amet. Ut tincidunt ante urna, vel commodo tortor feugiat ac.</p>
   	    </div>
   	    <div class="position">
-  	    <h4 class="title">Past Position</h4>
-  	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet tortor dolor, quis blandit ligula rhoncus sit amet. Ut tincidunt ante urna, vel commodo tortor feugiat ac.
+    	    <div class="title">Past Position</div >
+          <div class="date">June 2014 - December 2014</div>
+          <div class="department">Past Department</div>
+    	     <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet tortor dolor, quis blandit ligula rhoncus sit amet. Ut tincidunt ante urna, vel commodo tortor feugiat ac.</p>
   	    </div>
-  	    <div class="position">
-  	    <h4 class="title">Past Position</h4>
-  	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet tortor dolor, quis blandit ligula rhoncus sit amet. Ut tincidunt ante urna, vel commodo tortor feugiat ac.
+    	  <div class="position">
+          <div class="title">Past Position</div >
+          <div class="date">June 2013 - June 2014</div>
+          <div class="department">Past Department</div>
+    	    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet tortor dolor, quis blandit ligula rhoncus sit amet. Ut tincidunt ante urna, vel commodo tortor feugiat ac.</p>
   	     </div>
   	  </div>
+
+      <div id="upload">
+            <a href="#" class="btn btn-warning"><i class="fa fa-file-text-o"></i></a>
+            <a href="#" class="btn btn-warning"><i class="fa fa-file-image-o"></i></a>
+            <a href="#" class="btn btn-warning"><i class="fa fa-file-video-o"></i></a>
+      </div>
 
     </div>
   </div>
