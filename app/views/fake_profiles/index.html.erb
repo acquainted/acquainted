@@ -1,6 +1,9 @@
 <div class="ff-container">
 
 			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					<h1>Welcome Aboard, <%= current_user.first_name %>!</h1>
+				</div>
 				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
 					<ol class="fs-fields">
 						<li>
@@ -28,7 +31,8 @@
 							<textarea class="fs-mark fs-anim-lower" id="q5" name="q5" placeholder="I am passionate about making processes more efficient!"></textarea>
 						</li>
 					</ol><!-- /fs-fields -->
-					<button class="fs-submit" type="submit">Send answers</button>
+					<%= link_to 'Send Answers', fake_profiles_new_path, class: 'fs-submit btn btn-primary'%>
+
 				</form><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 
