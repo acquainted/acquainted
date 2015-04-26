@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'fake_profiles/index'
+  get 'fake_profiles/new'
+  get 'fake_profiles/show'
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   root 'profiles#index'
