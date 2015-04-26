@@ -1,8 +1,5 @@
-$(document).ready(function() {
-
-
-    $('#main_calendar').fullCalendar({
+$(function() {
+    $( "#main_calendar" ).fullCalendar({
         // put your options and callbacks here
     })
-
 });

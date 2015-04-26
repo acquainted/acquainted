@@ -1,4 +1,15 @@
 <div class="container">
+  <h1>Conversations</h1>
+  <div id="custom-search-input">
+      <div class="input-group col-md-12">
+          <input type="text" class="form-control" placeholder="Search Conversations" />
+          <span class="input-group-btn">
+              <button class="btn btn-primary" type="button">
+                  <%= icon('search')%>
+              </button>
+          </span>
+      </div>
+  </div>
   <div id="inbox">
     <div class="row">
         <ul class="nav nav-tabs">
@@ -73,7 +84,7 @@
             </tr>
 
             </tbody>
-        <%else %>      
+        <%else %>
           <%= render partial: 'conversations/conversation', collection: @conversations %>
         <%end%>
       </table>
