@@ -1,3 +1,40 @@
+@import 'base';
+
+#basic_info {
+	text-align:left;
+	padding:20px;
+	.name {
+
+	}
+
+	.position, .department, .joined {
+		padding:2px;
+		font-size:12px;
+		line-height:13px;
+	}
+	.joined {
+		color:$light-text-color;
+	}
+	.sendmsg {
+		margin-top:20px;
+	}
+}
+
+#about {
+	.bio, .ask_me, .position_history {
+		padding: 20px 0px;
+	}
+	.bio, .ask_me {
+		border-bottom:1px solid;
+	}
+	.ask_me {
+
+	}
+	.title {
+		font-weight:600;
+	}
+}
+
 .modal-dialog {
   padding:20px;
   background-color:#fff;
