@@ -10,14 +10,14 @@
 
       <%= f.text_field :last_name, required: true, :placeholder => "Last Name", :class => "form-control"%>
 
-      <%= f.email_field :email, required: true, :placeholder => "Email Address", :class => "form-control"%>
+      <%= f.email_field :email, required: true, :placeholder => "Company Email Address", :class => "form-control"%>
 
-      <%= f.password_field :password, required: true, :placeholder => "password", :class => "form-control" %>
+      <%= f.password_field :password, required: true, :placeholder => "Password", :class => "form-control" %>
       <% if @validatable %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %>
 
-        <%= f.password_field :passwor_confirmation, required: true, :placeholder => "confirm password", :class => "form-control", autocomplete: "off" %>
+        <%= f.password_field :passwor_confirmation, required: true, :placeholder => "confirm Confirm Password", :class => "form-control", autocomplete: "off" %>
 
       <div class="actions">
           <%= f.submit "Sign Up", class: 'btn-primary login' %>
