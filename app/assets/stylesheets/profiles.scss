@@ -5,13 +5,16 @@
 }
 #basic_info {
 	text-align:left;
-	.position, .department, .joined, .karma{
+	.position, .department, .joined{
 		padding:2px;
 		font-size:13px;
 		line-height:15px;
 	}
 	.joined, .karma {
 		color:$light-text-color;
+	}
+	.karma {
+		float:right;
 		display:inline-block;
 	}
 	.karma:hover {
