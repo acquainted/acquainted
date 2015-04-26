@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'admin/index'
+
   get 'fake_profiles/index'
   get 'fake_profiles/new'
   get 'fake_profiles/show'
