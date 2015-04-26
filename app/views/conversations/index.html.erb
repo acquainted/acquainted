@@ -7,6 +7,76 @@
           <%= mailbox_section 'trash', @box %>
         </ul>
 
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th class="conv_subject">Subject</th>
+            <th class="conv_participants">Participants</th>
+            <th class="conv_body">Body</th>
+            <th class="conv_actions"></th>
+          </tr>
+        </thead>
+        <% if @box == "inbox"%>
+          <!--Placeholder messages-->
+          <tbody>
+            <tr>
+              <td class="conv_subject">
+                <a href="#">Hello! </a><br />
+                <small><span class="text-muted">26 April 2015, 00:11:19</span></small>
+              </td>
+
+              <td class="conv_participants"><p><%= current_user.first_name %> <%= current_user.last_name %>, Jamie Lin </p>
+              </td>
+              <td class="conv_body">
+                <p>Hi Jamie, I was wondering if I could get your thoughts on some things?....</p>
+                </td>
+              <td class="conv_actions">
+                <div class="btn-group-vertical pull-right">
+                <label class="label label-default">Move to Trash</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="conv_subject">
+                <a href="#">Following up </a><br />
+                <small><span class="text-muted">26 April 2015, 00:12:29</span></small>
+              </td>
+
+              <td class="conv_participants"><p><%= current_user.first_name %> <%= current_user.last_name %>, Melissa Joan Hart</p>
+              </td>
+              <td class="conv_body">
+                <p>Melissa, It was great to meet you the other day. I was glad I could help you on your project...</p>
+                </td>
+              <td class="conv_actions">
+                <div class="btn-group-vertical pull-right">
+                <label class="label label-default">Move to Trash</label>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="conv_subject">
+                <a href="#">Hello! </a><br />
+                <small><span class="text-muted">26 April 2015, 00:10:17</span></small>
+              </td>
+
+              <td class="conv_participants"><p><%= current_user.first_name %> <%= current_user.last_name %>, Susannah Bayes</p>
+              </td>
+              <td class="conv_body">
+                <p>Susannah, I have a project you might be interested in...</p>
+                </td>
+              <td class="conv_actions">
+                <div class="btn-group-vertical pull-right">
+                <label class="label label-default">Move to Trash</label>
+                </div>
+              </td>
+            </tr>
+
+            </tbody>
+        <%else %>      
+          <%= render partial: 'conversations/conversation', collection: @conversations %>
+        <%end%>
+      </table>
         <table class="table table-striped table-hover">
           <thead>
             <tr>
