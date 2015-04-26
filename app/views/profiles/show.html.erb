@@ -3,10 +3,11 @@
     <div class="well">
       <div id="basic_info">
       <%= image_tag( @profile.avatar_l, class: "center-block img-responsive img-circle")%>
+      <div class="karma"> 43 <%= icon('star')%></div>
   	  <h4 class="name"><%= @profile.user.first_name %> <%= @profile.user.last_name %></h4>
       <div class="position"><%= @profile.position %> </div>
       <div class="department"><%= @profile.department %></div>
-      <div class="joined">Joined <%= @profile.user.created_at.year %> |</div><div class="karma"> 43 <%= icon('star')%></div>
+      <div class="joined">Joined <%= @profile.user.created_at.year %></div>
       <%= link_to 'Send message', new_message_path(to: @profile.user.id), class: 'btn btn-warning btn-sm sendmsg', "data-toggle" => "modal", 'data-target' => '#msgmodal'%>
       </div>
     </div>
