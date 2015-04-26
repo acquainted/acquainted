@@ -78,6 +78,11 @@
 <div class="modal fade" id="msgmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><%= form_tag messages_path, method: :post do %>
 
   <div class="modal-dialog">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">Say Hello</h4>
+    </div>
+    <br>
       <div class="form-group">
         <%= label_tag 'message[subject]', 'Subject' %>
         <%= text_field_tag 'message[subject]', nil, class: 'form-control', required: true %>

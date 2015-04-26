@@ -60,9 +60,10 @@
           <div class="name"><%= link_to profile.user.first_name + ' ' + profile.user.last_name, profile_path(profile) %>
           </div>
           <%= image_tag(profile.avatar_l, height: '150', class: "center-block img-responsive img-circle") %>
-
-          <div class="position"><%= profile.position %></div>
-          <div class="department"><%= profile.department %></div>
+          <div class="meta">
+            <div class="position"><%= profile.position %></div>
+            <div class="department"><%= profile.department %></div>
+          </div>
 
         </div>
     </div>
